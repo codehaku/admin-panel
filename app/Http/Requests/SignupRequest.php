@@ -12,7 +12,7 @@ class SignupRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return true;                     // make sure to change the authorise from 'false' to 'true'
     }
 
     /**

@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Requests\SignupRequest; // Update the import statement
 
-
 /*
 |--------------------------------------------------------------------------
 | API Routes

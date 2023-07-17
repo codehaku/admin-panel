@@ -7,13 +7,18 @@ const axiosClient = axios.create({
 // Request Interceptors
 
 axiosClient.interceptors.request.use((config) => {
+<<<<<<< HEAD
     const token = localStorage.getItem('ACCESS_TOKEN')
+=======
+    const token = localStorage.getItem('ACCESS_TOKEN') // 'get() changed to getItem()' - check error debug
+>>>>>>> c273694beebb2faa1631a3ee23b3881fb8df7e22
     config.headers.Authorization = `Bearer ${token}`
     return config;
 })
 
 // Response Interceptors
 
+<<<<<<< HEAD
 // axiosClient.interceptors.response.use((response) => {
 //     return response;
 // }, (error) => {
@@ -41,5 +46,24 @@ axiosClient.interceptors.response.use(
       throw error;
     }
   );
+=======
+axiosClient.interceptors.response.use((response) => {
+    return response;
+}, (error) => {
+
+    try {
+        const {response} = error;
+    
+        if (response.status === 401){
+            localStorage.removeItem('ACCESS_TOKEN')
+        }
+    } catch(e){
+        console.error(e);
+    }
+  
+    throw error;
+})
+
+>>>>>>> c273694beebb2faa1631a3ee23b3881fb8df7e22
 
 export default axiosClient;
