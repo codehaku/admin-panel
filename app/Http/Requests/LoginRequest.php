@@ -21,10 +21,12 @@ class LoginRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            
-            'email' => 'required|email|unique|exists:users,email',
-            'password' => 'required'
-        ];
+        
+            return [
+                'email' => 'required|email|exists:users,email',
+                'password' => 'required'
+            ];
     }
 }
+
+
