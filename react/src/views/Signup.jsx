@@ -16,9 +16,9 @@ export default function Signup() {
   const {setUser, setToken} = useStateContext()
 
 
-  const onSubmit = (event) => {
-    //debugger;                               // put up a debugger to troubleshoot
-    event.preventDefault()
+  const onSubmit = (ev) => {
+    //debugger;
+    ev.preventDefault();
     const payload = {
       name: nameRef.current.value,
       email: emailRef.current.value,
