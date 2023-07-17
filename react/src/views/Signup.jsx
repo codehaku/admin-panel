@@ -14,8 +14,9 @@ export default function Signup() {
   const {setUser, setToken} = useStateContext()
 
 
-  const onSubmit = (event) => {
-    event.preventDefault()
+  const onSubmit = (ev) => {
+    //debugger;
+    ev.preventDefault();
     const payload = {
       name: nameRef.current.value,
       email: emailRef.current.value,
@@ -24,8 +25,9 @@ export default function Signup() {
     }
 
     // Request to the server
-
-    axiosClient.post('/signup', payload).then(({data}) => {
+    console.log(payload);
+    axiosClient.post('/signup', payload)
+    .then(({data}) => {
       setUser(data.user)
       setToken(data.token)
 
