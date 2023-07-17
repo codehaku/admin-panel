@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller{
     
-    public function signup(signupRequest $request){
+    public function signup(SignupRequest $request){
         $data = $request -> validated();
         /** @var \App\Models\User $user */
         $user = User::create([
