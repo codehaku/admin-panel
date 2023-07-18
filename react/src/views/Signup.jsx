@@ -11,8 +11,7 @@ export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmationRef = useRef();
-  const [errors, setErrors] = useState(null);
-
+  const [errors, setErrors] = useState(null)
   const {setUser, setToken} = useStateContext()
 
 
@@ -47,7 +46,9 @@ export default function Signup() {
     <div className='login-signup-form animated fadeInDown'>
     <div className='form'>
       <form onSubmit={onSubmit}>
-        <h1 className='title'>Signup for free</h1>
+        <h1 className='title'>
+          Signup for free
+        </h1>
         <h1>
           {errors && <div className='alert'>
               {Object.keys(errors).map(key => (
